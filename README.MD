@@ -7,7 +7,6 @@ Fill DTO from symfony request
 composer require venomousboy/symfony-commander
 ```
 
-```
 in Symfony
 ```yaml
     Venomousboy\Commander:
