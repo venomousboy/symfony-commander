@@ -1,0 +1,17 @@
+{
+  "name": "venomousboy/symfony-commander",
+  "description": "Transform symfony request to DTO/Command",
+  "type": "library",
+  "license": "proprietary",
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^7.4",
+    "doctrine/orm": "^2.4",
+    "symfony/http-foundation": "^4.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Venomousboy\\SymfonyCommander\\": "src/"
+    }
+  }
+}
