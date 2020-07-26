@@ -64,7 +64,7 @@ final class CreateSomeCommand
 
 namespace App\Frontend;
 
-Venomousboy\Commander;
+Venomousboy\Commander\Commander;
 
 final class SomeController
 {
