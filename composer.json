@@ -11,7 +11,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Venomousboy\\SymfonyCommander\\": "src/"
+      "Venomousboy\\Commander\\": "src/"
     }
   }
 }
