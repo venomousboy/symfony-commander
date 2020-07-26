@@ -9,9 +9,9 @@ composer require venomousboy/symfony-commander
 
 in Symfony
 ```yaml
-    Venomousboy\Commander:
+    Venomousboy\Commander\Commander:
         public: true
-        class: Venomousboy\Commander
+        class: Venomousboy\Commander\Commander
         arguments:
             - '@request_stack'
 ```
