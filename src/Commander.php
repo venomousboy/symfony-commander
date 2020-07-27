@@ -31,7 +31,16 @@ final class Commander
      */
     public function fill(object $object): void
     {
-        $this->fillObject($object, $this->getRequest()->request->all());
+        $request = $this->getRequest()->request->all();
+
+        if (empty($this->getRequest()->request->all())) {
+            $request = json_decode($this->getRequest()->getContent(), true);
+            if ($request === null) {
+                throw new \RuntimeException('Request is empty');
+            }
+        }
+
+        $this->fillObject($object, $request);
     }
 
     /**
