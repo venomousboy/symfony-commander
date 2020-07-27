@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * Переадет аргумент в конструктор из службы контейнера HttpFoundation\RequestStack
+ * Вызывая метод текущего запроса getCurrentRequest() проверя только во время выполнении скрипта
+ * Метод fillObject() обрабатывает в цикле массив параметров, свйств и объекта
+ * Метод fillProperties() получает доступ ко всем свойствам объекта читая аннотации
+ * переданных ему паратметорв используя библиотеку https://www.doctrine-project.org/projects/doctrine-annotations/en/1.10/index.html
+ * Метод fillProperty() получает свойство объекта делая его доступным проверяя наличие аннотации
+ */
 declare(strict_types=1);
 
 namespace Venomousboy\Commander;
@@ -42,7 +49,7 @@ final class Commander
      */
     private function fillObject(object $object, array $params): void
     {
-        $reflection = new \ReflectionClass($object);
+        $reflection = ($object);
         $properties = $reflection->getProperties();
 
         $this->fillProperties($properties, $object, $params);
