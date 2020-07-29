@@ -2,12 +2,15 @@
 
 Fill DTO from symfony request
 
+### Description on property
+
 ### Installation
 ```bash
 composer require venomousboy/symfony-commander
 ```
 
-in Symfony
+### In Symfony 
+*config/service.yaml*
 ```yaml
     Venomousboy\Commander\Commander:
         public: true
@@ -57,9 +60,11 @@ final class CreateSomeCommand
      */
     private ?Address $address;
 
-    ...
+    
 }
-
+````
+### You controller
+```php
 <?php
 
 namespace App\Frontend;
@@ -79,8 +84,36 @@ final class SomeController
     {
 	$command = new CreateSomeCommand();
 	$this->commander->fill($command);
+    $this->service->createExample($command);
     }
     
-    ...
+   
+}
+```
+### You service
+
+```php
+
+namespace App\Service;
+
+use App\Entity\SomeEntity;
+
+final class SomeService
+{
+    
+    /**
+    * This create example method your service
+    * @param $command
+    * @return int
+    */
+    public function createExample($command): int
+    {
+        $entity = new SomeEntity(
+            $command->getName(),
+            $command->getDescription(),
+            $command->getPrice()
+        );
+    }
+
 }
 ```
