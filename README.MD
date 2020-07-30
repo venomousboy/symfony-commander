@@ -3,7 +3,16 @@
 Fill DTO from symfony request
 
 ### Description on property
+How annotation reading works and how to pass data types?
 
+Use these annotations
+string types:
+
+@Property(type="?string") 
+
+if you are using an array, specify:
+
+@Property(type="string[]") 
 ### Installation
 ```bash
 composer require venomousboy/symfony-commander
