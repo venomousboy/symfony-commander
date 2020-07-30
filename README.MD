@@ -8,11 +8,19 @@ How annotation reading works and how to pass data types?
 Use these annotations
 string types:
 
-@Property(type="?string") 
+`````@Property(type="?string")`````
 
 if you are using an array, specify:
 
-@Property(type="string[]") 
+`````@Property(type="string[]")`````
+
+Integer type in property 
+
+`````@Property(type="int")`````
+
+Or you are using int array:
+
+`````@Property(type="int[]") `````
 ### Installation
 ```bash
 composer require venomousboy/symfony-commander
