@@ -21,6 +21,17 @@ Integer type in property
 Or you are using int array:
 
 `````@Property(type="int[]") `````
+
+Float type using:
+
+`````@Property(type="float") `````
+
+Object type using:
+
+`````@Property(type="?\App\Object", isStructure=true) `````
+
+### What is ```"isStructure=true"```
+This type specifies that the property has an object that also has type property annotations ``@Property()``
 ### Installation
 ```bash
 composer require venomousboy/symfony-commander
@@ -40,7 +51,7 @@ composer require venomousboy/symfony-commander
 ```php
 <?php
 
-namespace App\Frontend;
+namespace App\DTO\CreateSomeCommand;
 
 final class CreateSomeCommand
 {
@@ -77,14 +88,32 @@ final class CreateSomeCommand
      */
     private ?Address $address;
 
-    
+    ... your getter
 }
+````
+````php
+namespace App\DTO\Address;
+
+final class Address
+{
+    /**
+    * @Property(type="string")
+    */
+    private string $city;
+    
+    /**
+    * @Property(type="int")
+    */
+    private int $home;
+
+    ... your getter
+}
+
 ````
 ### You controller
 ```php
-<?php
 
-namespace App\Frontend;
+namespace App\Controller\SomeController;
 
 Venomousboy\Commander\Commander;
 

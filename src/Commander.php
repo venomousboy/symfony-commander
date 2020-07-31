@@ -26,6 +26,7 @@ final class Commander
 
     /**
      * @param object $object
+     *
      * @throws \ReflectionException
      * @throws \Doctrine\Common\Annotations\AnnotationException
      */
@@ -46,6 +47,7 @@ final class Commander
     /**
      * @param object $object
      * @param mixed[] $params
+     *
      * @throws \ReflectionException
      * @throws \Doctrine\Common\Annotations\AnnotationException
      */
@@ -65,6 +67,7 @@ final class Commander
     /**
      * @param \ReflectionProperty[] $properties
      * @param mixed[] $params
+     *
      * @throws \Doctrine\Common\Annotations\AnnotationException
      * @throws \ReflectionException
      */
@@ -142,7 +145,9 @@ final class Commander
 
     /**
      * @param mixed $input
+     *
      * @return mixed|null
+     *
      * @throws \ReflectionException
      * @throws \Doctrine\Common\Annotations\AnnotationException
      */
