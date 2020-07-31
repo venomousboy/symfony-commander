@@ -128,9 +128,9 @@ final class SomeController
     
     public function create(Request $request)
     {
-	$command = new CreateSomeCommand();
-	$this->commander->fill($command);
-    $this->service->createExample($command);
+        $command = new CreateSomeCommand();
+        $this->commander->fill($command);
+        $this->service->createExample($command);
     }
     
    
